@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 
 
 public class User {
-	private int Id;
-	private String Name;
-	private String[] Address;
+	private int id;
+	private String name;
+	private String[] address;
 
 }

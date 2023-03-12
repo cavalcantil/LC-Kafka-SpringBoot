@@ -15,17 +15,17 @@ public class LcKafkaSpringBatchApplication {
 
 	@Autowired
 	private KafkaTemplate<String, Object> template;
-	private String topic1 = "cavalcanti";
+	private String topic = "cavalcanti";
 	@GetMapping("/publish/{name}")
 	public  String publishMessage(@PathVariable String name) {
-		template.send(topic1, "Hi "+name+",  Welcome to Leo Cavalcantis Kafka Project" );
-		return "Data Published";
+		template.send(topic, "Hi "+name+",  Welcome to Leo Cavalcantis Kafka Project" );
+		return "Data published by L.Cavalcanti";
 	}
 
 	@GetMapping("/publishJson")
 	public  String publishMessage() {
 		User user = new User(2532, "UserEva", new String[] {"Avenida Paulista","000", "Sao Paulo, Brazil"});
-		template.send(topic1, user);
+		template.send(topic, user);
 		return "Json Data Published";
 
 
